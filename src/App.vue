@@ -2,11 +2,13 @@
   <header class="">
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
+    <div>
+      <OllangLogo class="px-8 pt-16 cursor-pointer" />
+    </div>
+
     <div class="shadow-md min-h-screen">
       <!-- <HelloWorld msg="You did it!" /> -->
-      <RouterLink class="p-3" to="/">
-        <OllangLogo class="px-8 pt-16" />
-      </RouterLink>
+
       <nav class="flex flex-col pl-6">
         <RouterLink class="p-3" to="/feeds">
           <IconJob class="mr-3" />
@@ -29,7 +31,7 @@
           <IconProposal class="mr-3" />
           Contracts</RouterLink
         >
-        <RouterLink class="p-3" to="/user/:id">
+        <RouterLink class="p-3" to="/user/3">
           <IconProposal class="mr-3" />
           Profile</RouterLink
         >
@@ -56,12 +58,13 @@ import IconJobs from './components/icons/IconJobs.vue'
 import SavedJobsView from './views/SavedJobsView.vue'
 import IconSaved from './components/icons/IconSaved.vue'
 import IconProposal from './components/icons/IconProposal.vue'
-// import HelloWorld from '@/components/HelloWorld.vue'
-import { useCounterStore } from '@/stores/counter'
 
-const counter = useCounterStore()
-const users = counter.getProfiles()
-counter.getProfiles()
+import { useStore } from '@/stores/users'
+
+const users = useStore()
+
+console.log(users.profiles.map((m) => m))
+users.getProfiles()
 </script>
 
 <style>

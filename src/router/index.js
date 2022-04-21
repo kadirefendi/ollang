@@ -1,16 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// import HomeView from '../views/HomeView.vue'
 import UserView from '../views/UserView.vue'
-import UserProfileView from '../views/UserProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
-    },
+    // {
+    //   path: '/',
+    //   name: 'home',
+    //   component: HomeView,
+    // },
 
     {
       path: '/feeds',
@@ -38,15 +37,9 @@ const router = createRouter({
       component: () => import('../views/ContractsView.vue'),
     },
     {
-      path: '/user/id',
+      path: '/user/:id',
       name: 'user',
       component: UserView,
-      children: [
-        {
-          path: 'profile',
-          component: UserProfileView,
-        },
-      ],
     },
     {
       path: '/transaction',

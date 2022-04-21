@@ -1,32 +1,42 @@
 <template>
-  <div class="bg-slate-50 min-h-screen">
-    <p>{{ $route.params.id }}</p>
-    <p>{{ $route.params.name }}</p>
-    <ul>
-      <li v-for="user in users" :key="id">{{ user.id }} {{ user.name }}</li>
-    </ul>
-    <router-link :to="`${user.id}`"></router-link>
+  <div class="bg-slate-50 min-h-screen p-12">
+    <ProfileAppBar />
+    <div class="flex flex-row">
+      <div class="basis-2/3">
+        <ProfileUser />
+        <ProfileExperience />
+        <ProfileTabs />
+      </div>
+      <div id="banner" class="basis-1/3 bg-white px-6 mt-8">
+        <Banner />
+      </div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-2/3"></div>
+    </div>
   </div>
+
+  {{ $route.params.name }}
 </template>
 
 <script setup>
-import { useRouter, useRoute, RouterLink } from 'vue-router'
-import { useCounterStore } from '@/stores/counter'
+import { useRoute, useRouter } from 'vue-router'
+import ProfileAppBar from '@/components/ProfileAppBar.vue'
+import ProfileUser from '@/components/ProfileUser.vue'
+import { useStore } from '../stores/users'
 import { ref } from 'vue'
+import Banner from '../components/Banner.vue'
+import ProfileExperience from '../components/ProfileExperience.vue'
+import ProfileTabs from '../components/ProfileTabs.vue'
 
-const counter = useCounterStore()
-const users = counter.getProfiles()
-
-console.log(users)
-
-const router = useRouter()
-const route = useRoute()
-
-// const pushRouter = () => {
-//   ids.value
-// }
-
-// pushRouter()
-
-// console.log(route.params)
+const users = useStore()
 </script>
+
+<style scoped>
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+</style>

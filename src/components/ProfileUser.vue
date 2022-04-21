@@ -3,7 +3,7 @@
     <div id="leftside" class="grid grid-cols-12 gap-4 mt-10">
       <div id="avatar" class="col-span-2 row-span-2">
         <img
-          :src="counter.profiles[0].avatar"
+          :src="users.profiles[0].avatar"
           alt=""
           width="150"
           height="150"
@@ -11,9 +11,7 @@
         />
       </div>
       <div id="profilename" class="flex flex-col col-span-5 ml-6">
-        <span class="text-xl font-semibold">
-          {{ counter.profiles[0].name }}</span
-        >
+        <span class="text-xl font-semibold"> {{ users.profiles[0].name }}</span>
         <div class="flex flex-row mt-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +32,7 @@
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-          <span> {{ counter.profiles[0].country }} </span>
+          <span> {{ users.profiles[0].country }} </span>
         </div>
       </div>
       <div class="flex col-span-5">
@@ -48,15 +46,15 @@
         </div>
       </div>
       <div class="col-span-8 row-span-1 ml-6">
-        {{ counter.profiles[0].summary }}
+        {{ users.profiles[0].summary }}
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useCounterStore } from '../stores/counter'
-const counter = useCounterStore()
+import { useStore } from '../stores/users'
+const users = useStore()
 </script>
 
 <style>

@@ -1,19 +1,15 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-export const useCounterStore = defineStore({
-  id: 'counter',
+export const useStore = defineStore({
+  id: 'users',
   state: () => ({
-    counter: 0,
     profiles: [],
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2,
+    //
   },
   actions: {
-    increment() {
-      this.counter++
-    },
     getProfiles() {
       axios
         .get('https://6255745f52d8738c6922364f.mockapi.io/users')

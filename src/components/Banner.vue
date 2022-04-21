@@ -7,7 +7,7 @@
         <strong class="text-2xl ml-2">Pro</strong>
       </div>
       <span class="mt-4 text-center">
-        {{ counter.profiles[0].summary }}
+        {{ users.profiles[0].summary }}
       </span>
     </div>
     <div class="mt-12">
@@ -32,7 +32,7 @@
 
 <script setup>
 import IconTrophy from './icons/IconTrophy.vue'
-import { useCounterStore } from '../stores/counter'
+import { useStore } from '../stores/users'
 import IconCheck from './icons/IconCheck.vue'
-const counter = useCounterStore()
+const users = useStore()
 </script>

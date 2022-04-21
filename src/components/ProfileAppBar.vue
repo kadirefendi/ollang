@@ -43,13 +43,14 @@
           />
         </svg>
         <img
-          :src="counter.profiles[0].avatar"
+          :src="users.profiles[0].avatar"
           alt=""
           width="50"
           height="50"
           class="mx-2 rounded-xl"
         />
-        {{ counter.profiles[0].name }}
+        {{ users.profiles[0].name }}
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6 mx-2"
@@ -70,7 +71,7 @@
 </template>
 
 <script setup>
-import { useCounterStore } from '../stores/counter'
-const counter = useCounterStore()
-console.log('sayac' + counter)
+import { useStore } from '../stores/users'
+import { useRoute, useRouter } from 'vue-router'
+const users = useStore()
 </script>

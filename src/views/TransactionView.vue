@@ -20,19 +20,17 @@
 <script setup>
 import ProfileAppBar from '@/components/ProfileAppBar.vue'
 import ProfileUser from '@/components/ProfileUser.vue'
-import { useCounterStore } from '../stores/counter'
+import { useStore } from '../stores/users'
 import { ref } from 'vue'
 import Banner from '../components/Banner.vue'
 import ProfileExperience from '../components/ProfileExperience.vue'
 import ProfileTabs from '../components/ProfileTabs.vue'
 
-const sayac = ref()
+const users = useStore()
 
-const counter = useCounterStore()
+console.log(users.profiles[0])
 
-console.log(counter.profiles[0])
-
-console.log(counter.profiles)
+console.log(users.profiles)
 </script>
 
 <style scoped>

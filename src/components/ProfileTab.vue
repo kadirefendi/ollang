@@ -31,13 +31,8 @@
           <span class="font-medium">Media Files (2)</span>
         </div>
         <div class="flex flex-row">
-          <img
-            src="../assets/images/pic-one.jpg"
-            alt=""
-            width="250"
-            class="mr-2"
-          />
-          <img src="../assets/images/pic-two.png" alt="" width="250" />
+          <img src="../assets/images/pic-one.jpg" alt="" class="mr-2" />
+          <img src="../assets/images/pic-two.png" alt="" />
         </div>
         <hr class="my-4" />
       </div>
@@ -80,3 +75,9 @@ import IconClockSm from './icons/IconClockSm.vue'
 import IconMap from './icons/IconMap.vue'
 import IconSketch from './icons/IconSketch.vue'
 </script>
+
+<style scoped>
+img {
+  max-width: 50%;
+}
+</style>
